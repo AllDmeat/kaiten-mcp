@@ -636,7 +636,8 @@ func handleToolCall(_ params: CallTool.Parameters) async -> CallTool.Result {
         let cardId = try requireInt(params, key: "card_id")
         let userId = try requireInt(params, key: "user_id")
         let typeValue = try requireInt(params, key: "type")
-        guard let roleType = CardMemberRoleType(rawValue: typeValue) else {
+        let roleType = CardMemberRoleType(rawValue: typeValue)
+        guard CardMemberRoleType.allCases.contains(roleType) else {
           throw ToolError.invalidType(key: "type", expected: "1 (member) or 2 (responsible)")
         }
         let role = try await kaiten.updateCardMemberRole(
