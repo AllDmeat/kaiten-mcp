@@ -12,7 +12,7 @@ Built on top of [kaiten-sdk](https://github.com/AllDmeat/kaiten-sdk).
 
 ### mise (recommended)
 
-[mise](https://mise.jdx.dev/getting-started.html) — a tool version manager. It will install the required version automatically:
+[mise](https://mise.jdx.dev/getting-started.html) installs the latest release binary for your platform:
 
 ```bash
 mise use github:alldmeat/kaiten-mcp
@@ -23,6 +23,8 @@ mise use github:alldmeat/kaiten-mcp
 Download the binary for your platform from the [releases page](https://github.com/AllDmeat/kaiten-mcp/releases).
 
 ### From Source
+
+Building from source requires Swift 6.3 or newer.
 
 ```bash
 swift build -c release
@@ -164,7 +166,6 @@ User preferences are stored separately in `~/.config/kaiten/preferences.json`:
 
 ## Requirements
 
-- Swift 6.3+
 - macOS 15+ (ARM) / Linux (x86-64, ARM)
 
 ## License
