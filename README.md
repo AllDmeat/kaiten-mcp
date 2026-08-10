@@ -164,7 +164,7 @@ User preferences are stored separately in `~/.config/kaiten/preferences.json`:
 
 ## Requirements
 
-- Swift 6.2+
+- Swift 6.3+
 - macOS 15+ (ARM) / Linux (x86-64, ARM)
 
 ## License

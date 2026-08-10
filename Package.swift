@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.3
 import PackageDescription
 
 let package = Package(
@@ -14,7 +14,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/modelcontextprotocol/swift-sdk.git",
-            from: "0.10.0"
+            from: "0.12.1"
         ),
     ],
     targets: [
