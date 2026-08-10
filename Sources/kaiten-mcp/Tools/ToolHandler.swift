@@ -636,7 +636,8 @@ func handleToolCall(_ params: CallTool.Parameters) async -> CallTool.Result {
         let cardId = try requireInt(params, key: "card_id")
         let userId = try requireInt(params, key: "user_id")
         let typeValue = try requireInt(params, key: "type")
-        guard let roleType = CardMemberRoleType(rawValue: typeValue) else {
+        let roleType = CardMemberRoleType(rawValue: typeValue)
+        guard CardMemberRoleType.allCases.contains(roleType) else {
           throw ToolError.invalidType(key: "type", expected: "1 (member) or 2 (responsible)")
         }
         let role = try await kaiten.updateCardMemberRole(
@@ -782,16 +783,18 @@ func handleToolCall(_ params: CallTool.Parameters) async -> CallTool.Result {
       }
     }()
     log("Tool call succeeded: \(params.name) in \(elapsedMilliseconds(since: startedAt))ms")
-    return .init(content: [.text(json)], isError: false)
+    return .init(content: [.text(text: json, annotations: nil, _meta: nil)], isError: false)
   } catch let error as ToolError {
     log(
       "Tool call failed: \(params.name) in \(elapsedMilliseconds(since: startedAt))ms, error=\(error.description)"
     )
-    return .init(content: [.text(error.description)], isError: true)
+    return .init(
+      content: [.text(text: error.description, annotations: nil, _meta: nil)], isError: true)
   } catch {
     log(
       "Tool call failed: \(params.name) in \(elapsedMilliseconds(since: startedAt))ms, unexpected=\(error)"
     )
-    return .init(content: [.text("Error: \(error)")], isError: true)
+    return .init(
+      content: [.text(text: "Error: \(error)", annotations: nil, _meta: nil)], isError: true)
   }
 }
