@@ -4,6 +4,9 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FAllDmeat%2Fkaiten-mcp%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/AllDmeat/kaiten-mcp)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FAllDmeat%2Fkaiten-mcp%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/AllDmeat/kaiten-mcp)
 
+> [!IMPORTANT]
+> **kaiten-mcp has moved to [AllDmeat/kaiten](https://github.com/AllDmeat/kaiten).** It is now built and released from there, in the same release archive as the `kaiten` CLI. Install it with `mise use github:AllDmeat/kaiten`; setup and the tool list are in [docs/mcp.md](https://github.com/AllDmeat/kaiten/blob/main/docs/mcp.md). This repository is no longer updated.
+
 MCP server for [Kaiten](https://kaiten.ru) — gives AI agents access to boards, cards, and properties via [Model Context Protocol](https://modelcontextprotocol.io).
 
 Built on top of [kaiten-sdk](https://github.com/AllDmeat/kaiten-sdk).
